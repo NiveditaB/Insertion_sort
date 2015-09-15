@@ -1,23 +1,23 @@
 #include<stdio.h>
-#include<conio.h>
-void main()
-{ int i,j,k,new;
+int main()
+{ int i,j,k,t,l,pos;
   int a[5]={5,3,7,1,4};
-  clrscr();
-  for(j=1;j<=5;j++)
-  { for(i=1;i<j;i++)
-    if(a[j]<a[i])
-    { k=j-1;
-      while(k<0)
-      { new=a[j];
-        a[j]=a[k];
-        a[k]=a[k-1];
-        k--;
-      }
-    }
-  }
+
+for(k=0;k<5;k++)
+{
+l=a[k];
+for(i=k;i<5;i++)
+{
+if(a[i]>l){l=a[i];pos=i;}
+}
+t=a[k];
+a[k]=a[pos];
+a[pos]=t;
+printf("%d ",l);
+}
+
   printf("the sorted array is \t");
-  for(i=1;i<=5;i++)
-  { printf("%d",a[i]);
-  getch();
+  for(i=0;i<5;i++)
+  { printf("%d  ",a[i]);}
+return 0;
 }
